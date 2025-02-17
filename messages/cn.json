@@ -1,0 +1,24 @@
+{
+    "HomePage": {
+        "title": "你好,世界",
+        "welcome":{
+            "title" :"欢迎来到主页",
+            "description" : "这是主页"
+        },
+        "about": "转到关于页面",
+        "home": "主页",
+        "contact": "联系",
+        "contactPage": "转至联系页面"
+    },
+    "contactForm": {
+        "name": "姓名",
+        "email": "电子邮件",
+        "message": "消息",
+        "submit": "提交"
+    },
+    "validation": {
+        "invalid": "电子邮件无效",
+        "required": "姓名必填",
+        "min": "消息至少需要 10 个字符"
+    }
+}
