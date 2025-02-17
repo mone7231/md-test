@@ -1,6 +1,6 @@
 //import {useTranslations} from 'next-intl';
 import { getTranslations } from 'next-intl/server';
-import {Link} from '@/src/i18n/routing';
+// import {Link} from '@/src/i18n/routing';
 import Image from "next/image";
 
 export default async function HomePage() {
@@ -23,7 +23,7 @@ export default async function HomePage() {
         <div className="gap-4 items-center flex-col sm:flex-row">
           <h1>{t('welcome.title')}</h1>
           <br/>
-          <Link href="/contact">{t('contact')}</Link>
+          {/* <Link href="/contact">{t('contact')}</Link> */}
         </div>
 
 
