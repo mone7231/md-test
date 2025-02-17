@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
+import {setRequestLocale} from 'next-intl/server';
 
 import "./globals.css";
 
@@ -46,6 +47,9 @@ export default async function LocaleLayout({
     notFound();
   }
  
+  // Enable static rendering
+  setRequestLocale(locale);
+
   // Providing all messages to the client
   // side is the easiest way to get started
   const messages = await getMessages();

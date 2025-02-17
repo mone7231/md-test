@@ -2,7 +2,7 @@
 import { getTranslations } from 'next-intl/server';
 import {Link} from '@/src/i18n/routing';
 import Image from "next/image";
- 
+
 export default async function HomePage() {
   //const t = useTranslations('HomePage');
   const t = await getTranslations('HomePage');

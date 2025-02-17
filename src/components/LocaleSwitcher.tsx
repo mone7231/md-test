@@ -3,6 +3,10 @@ import { Globe } from "lucide-react";
 import { useLocale } from "next-intl";
 import LocaleSwitcherSelect from "./LocaleSwitcherSelect";
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({locale}));
+}
+
 export default function LocaleSwitcher() {
   const locale = useLocale();
 

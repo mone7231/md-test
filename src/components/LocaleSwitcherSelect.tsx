@@ -17,6 +17,10 @@ type Props = {
   label: string;
 };
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({locale}));
+}
+
 export default function LocaleSwitcherSelect({ defaultValue, label }: Props) {
   const router = useRouter();
 
