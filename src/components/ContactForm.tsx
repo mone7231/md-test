@@ -18,9 +18,11 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
+
 export function ContactForm() {
   const t = useTranslations("contactForm");
   const validationMessages = useTranslations("validation");
+  
 
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(getContactFormSchema(validationMessages)),
