@@ -6,7 +6,7 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig  : NextConfig = {
      reactStrictMode: true,
-     distDir: "build",
+     //distDir: "build",
      //basePath: "/md-test",
 };
  
