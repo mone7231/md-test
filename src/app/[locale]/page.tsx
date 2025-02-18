@@ -23,7 +23,11 @@ export default async function HomePage() {
         <div className="gap-4 items-center flex-col sm:flex-row">
           <h1>{t('welcome.title')}</h1>
           <br/>
-          <Link href="/contact">{t('contact')}</Link>
+          <div className='flex justify-evenly'>
+          <Link href="/contact">{t('contact')}</Link> | 
+          <Link href="/api">{t('api')}</Link>
+          </div>
+      
         </div>
 
 

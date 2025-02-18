@@ -11,6 +11,10 @@ export const routing = defineRouting({
     "/contact" : {
       en:"/contact",
       cn:"/contact-cn"
+    },
+    "/api" : {
+      en:"/api",
+      cn:"/api-cn"
     }
   }
 });

@@ -8,7 +8,8 @@
         "about": "转到关于页面",
         "home": "主页",
         "contact": "联系",
-        "contactPage": "转至联系页面"
+        "contactPage": "转至联系页面",
+        "api": "API 测试"
     },
     "contactForm": {
         "name": "姓名",
