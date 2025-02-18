@@ -1,12 +1,18 @@
 import createNextIntlPlugin from 'next-intl/plugin';
-//import type { NextConfig } from "next";
+import { NextConfig } from 'next';
 
 const withNextIntl = createNextIntlPlugin();
- 
-/** @type {import('next').NextConfig} */
-const nextConfig  = {
-     reactStrictMode: true,
-     distDir: 'build',
+
+const nextConfig: NextConfig = {
+    reactStrictMode: true,
+    distDir: 'build',
+    output: "export",
+    async rewrites() {
+     return [
+         { source: "/en/:path*", destination: "/:path*" },
+         { source: "/cn/:path*", destination: "/:path*" }
+     ];
+ }
 };
- 
+
 export default withNextIntl(nextConfig);
