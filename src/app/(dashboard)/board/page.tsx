@@ -1,5 +1,5 @@
 
-export default function DashboardPage(){
+export default function BoardPage(){
     // Enable static rendering
   //setRequestLocale(locale);
 
