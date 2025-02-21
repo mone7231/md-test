@@ -9,6 +9,8 @@ export default function Error({
     reset: () => void;
   }
 ){
+    console.log(error, reset); // 临时使用参数
+        
     return (
         <main className="p-4 md:p-6">
             <div className="mb-8 space-y-4">
