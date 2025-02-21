@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { signIn } from '@/lib/auth';
+//import { signIn } from '@/lib/auth';
 import { Button } from '@/src/components/parts/button';
 import {
   Card,
@@ -28,15 +28,7 @@ export default function LoginPage(){
                 </CardDescription>
               </CardHeader>
               <CardFooter>
-                <form
-                  action={async () => {
-                    'use server';
-                    await signIn('github', {
-                      redirectTo: '/'
-                    });
-                  }}
-                  className="w-full"
-                >
+                <form className="w-full">
                   <Button className="w-full">Sign in with GitHub</Button>
                 </form>
               </CardFooter>
