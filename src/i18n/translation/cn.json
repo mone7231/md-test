@@ -8,7 +8,9 @@
         "about": "转到关于页面",
         "home": "主页",
         "contact": "联系",
-        "contactPage": "转至联系页面"
+        "contactPage": "转至联系页面",
+        "api": "API 测试",
+        "login" : "登入"
     },
     "contactForm": {
         "name": "姓名",
@@ -20,5 +22,10 @@
         "invalid": "电子邮件无效",
         "required": "姓名必填",
         "min": "消息至少需要 10 个字符"
+    },
+    "LocaleSwitcher": {
+      "cn": "Chinese",
+      "en": "English",
+      "label": "Language"
     }
 }

@@ -8,7 +8,9 @@
       "about": "Go to the about page",
       "home": "Home",
       "contact": "Contact",
-      "contactPage": "Go to the contact page"
+      "contactPage": "Go to the contact page",
+      "api": "API Testing",
+      "login" : "Login"
     },
     "contactForm": {
       "name": "Name",
@@ -20,5 +22,10 @@
       "invalid": "Email invalid",
       "required": "Name required",
       "min": "Message required to be at least 10 characters"
+    },
+    "LocaleSwitcher": {
+      "cn": "Chinese",
+      "en": "English",
+      "label": "Language"
     }
   }
