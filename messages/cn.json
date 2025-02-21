@@ -21,5 +21,10 @@
         "invalid": "电子邮件无效",
         "required": "姓名必填",
         "min": "消息至少需要 10 个字符"
+    },
+    "LocaleSwitcher": {
+      "cn": "Chinese",
+      "en": "English",
+      "label": "Language"
     }
 }

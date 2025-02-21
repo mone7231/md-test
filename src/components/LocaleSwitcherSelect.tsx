@@ -1,53 +1,72 @@
-"use client";
+'use client';
 
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/src/components/ui/select";
-import { Locale, routing, usePathname, useRouter } from "@/src/i18n/routing";
-import { useParams } from "next/navigation";
-import { ReactNode } from "react";
+import {CheckIcon, LanguageIcon} from '@heroicons/react/24/solid';
+import * as Select from '@radix-ui/react-select';
+import clsx from 'clsx';
+import {useTransition} from 'react';
+import {Locale} from '@/src/i18n/config';
+import {setUserLocale} from '@/services/locale';
 
 type Props = {
-  children: ReactNode;
   defaultValue: string;
+  items: Array<{value: string; label: string}>;
   label: string;
 };
 
-export default function LocaleSwitcherSelect({ defaultValue, label }: Props) {
-  const router = useRouter();
+export default function LocaleSwitcherSelect({
+  defaultValue,
+  items,
+  label
+}: Props) {
+  const [isPending, startTransition] = useTransition();
 
-  const pathname = usePathname();
-  const params = useParams();
-
-  function onSelectChange(nextLocale: string) {
-    router.replace(
-      // @ts-expect-error -- TypeScript will validate that only known `params`
-      // are used in combination with a given `pathname`. Since the two will
-      // always match for the current route, we can skip runtime checks.
-      { pathname, params },
-      { locale: nextLocale as Locale }
-    );
+  function onChange(value: string) {
+    const locale = value as Locale;
+    startTransition(() => {
+      setUserLocale(locale);
+    });
   }
 
   return (
-    <Select defaultValue={defaultValue} onValueChange={onSelectChange}>
-      <SelectTrigger
-        className='w-[80px] h-8 border-none bg-transparent focus:ring-0 focus:ring-offset-0'
-        aria-label={label}
-      >
-        <SelectValue />
-      </SelectTrigger>
-      <SelectContent>
-        {routing.locales.map((locale) => (
-          <SelectItem key={locale} value={locale}>
-            {locale.toUpperCase()}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
+    <div className="relative">
+      <Select.Root defaultValue={defaultValue} onValueChange={onChange}>
+        <Select.Trigger
+          aria-label={label}
+          className={clsx(
+            'rounded-sm p-2 transition-colors hover:bg-slate-200',
+            isPending && 'pointer-events-none opacity-60'
+          )}
+        >
+          <Select.Icon>
+            <LanguageIcon className="h-6 w-6 text-slate-600 transition-colors group-hover:text-slate-900" />
+          </Select.Icon>
+        </Select.Trigger>
+        <Select.Portal>
+          <Select.Content
+            align="end"
+            className="min-w-[8rem] overflow-hidden rounded-sm bg-white py-1 shadow-md"
+            position="popper"
+          >
+            <Select.Viewport>
+              {items.map((item) => (
+                <Select.Item
+                  key={item.value}
+                  className="flex cursor-default items-center px-3 py-2 text-base data-[highlighted]:bg-slate-100"
+                  value={item.value}
+                >
+                  <div className="mr-2 w-[1rem]">
+                    {item.value === defaultValue && (
+                      <CheckIcon className="h-5 w-5 text-slate-600" />
+                    )}
+                  </div>
+                  <span className="text-slate-900">{item.label}</span>
+                </Select.Item>
+              ))}
+            </Select.Viewport>
+            <Select.Arrow className="fill-white text-white" />
+          </Select.Content>
+        </Select.Portal>
+      </Select.Root>
+    </div>
   );
 }

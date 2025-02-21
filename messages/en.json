@@ -21,5 +21,10 @@
       "invalid": "Email invalid",
       "required": "Name required",
       "min": "Message required to be at least 10 characters"
+    },
+    "LocaleSwitcher": {
+      "cn": "Chinese",
+      "en": "English",
+      "label": "Language"
     }
   }

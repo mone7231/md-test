@@ -1,25 +1,23 @@
-import { routing } from "@/src/i18n/routing";
-import { Globe } from "lucide-react";
-import { useLocale } from "next-intl";
-import LocaleSwitcherSelect from "./LocaleSwitcherSelect";
-
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({locale}));
-}
+import {useLocale, useTranslations} from 'next-intl';
+import LocaleSwitcherSelect from '@/src/components/LocaleSwitcherSelect';
 
 export default function LocaleSwitcher() {
+  const t = useTranslations('LocaleSwitcher');
   const locale = useLocale();
-
   return (
-    <div className='flex items-center gap-2'>
-      <Globe className='h-4 w-4 text-muted-foreground' />
-      <LocaleSwitcherSelect defaultValue={locale} label='Select a locale'>
-        {routing.locales.map((cur) => (
-          <option key={cur} value={cur}>
-            {cur}
-          </option>
-        ))}
-      </LocaleSwitcherSelect>
-    </div>
+    <LocaleSwitcherSelect
+      defaultValue={locale}
+      items={[
+        {
+          value: 'en',
+          label: t('en')
+        },
+        {
+          value: 'cn',
+          label: t('cn')
+        }
+      ]}
+      label={t('label')}
+    />
   );
 }

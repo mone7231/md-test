@@ -7,5 +7,10 @@
       },
       "about": "Gå til siden om",
       "contact": "Go to the contact page"
+    },
+    "LocaleSwitcher": {
+      "cn": "Chinese",
+      "en": "English",
+      "label": "Language"
     }
   }
