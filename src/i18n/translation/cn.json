@@ -9,7 +9,8 @@
         "home": "主页",
         "contact": "联系",
         "contactPage": "转至联系页面",
-        "api": "API 测试"
+        "api": "API 测试",
+        "login" : "登入"
     },
     "contactForm": {
         "name": "姓名",

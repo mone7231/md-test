@@ -9,7 +9,8 @@
       "home": "Home",
       "contact": "Contact",
       "contactPage": "Go to the contact page",
-      "api": "API Testing"
+      "api": "API Testing",
+      "login" : "Login"
     },
     "contactForm": {
       "name": "Name",

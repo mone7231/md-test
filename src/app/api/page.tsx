@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { IndexNavBar } from "@/src/components/IndexNavBar";
-
 
 type Report = {
     id: number;
@@ -62,8 +60,7 @@ export default function ApiPage() {
     return (
             
             <div>
-                <IndexNavBar/>
-
+              
                 <div className="p-5">
                     <h1 className="text-xl font-bold">Report Viewer</h1>
 

@@ -1,5 +1,4 @@
 import { ContactForm } from "@/src/components/ContactForm";
-import { IndexNavBar } from "@/src/components/IndexNavBar";
 //import {setRequestLocale} from 'next-intl/server';
 
 //type Props = {
@@ -13,7 +12,6 @@ export default function ContactPage(){
 
     return (
         <div>
-            <IndexNavBar/>
             <ContactForm />
         </div>
     );
