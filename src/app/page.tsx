@@ -23,7 +23,7 @@ export default async function HomePage(){
 
             <div className="gap-4 items-center flex-col sm:flex-row">
               <h1>{t('welcome.title')}</h1>
-              
+
               <br/>
 
               <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
@@ -38,7 +38,8 @@ export default async function HomePage(){
               </ol>
 
               <br/>
-                <Link href="/login">{t('contact')}</Link>
+                <Link href="/login">{t('login')}</Link>
+                <Link href="/dashboard">{t('contact')}</Link>
             </div>
         </main>
     </div>
