@@ -24,7 +24,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator
 } from '@/src/components/parts/breadcrumb';
-import { Sheet, SheetContent, SheetTrigger,SheetHeader, SheetTitle, SheetDescription,  SheetClose  } from '@/src/components/parts/sheet';
+import { Sheet, SheetContent, SheetTrigger,SheetHeader, SheetTitle  } from '@/src/components/parts/sheet';
 import { Button } from '@/src/components/parts/button';
 import { User } from './user';
 import { SearchInput } from './search';

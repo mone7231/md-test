@@ -12,7 +12,7 @@ import {
 import Link from 'next/link';
 
 export async function User() {
-  let user = null;
+  const user = null;
 
   return (
     <DropdownMenu>
