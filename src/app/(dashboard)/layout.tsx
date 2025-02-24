@@ -16,18 +16,11 @@ import {
   TooltipContent,
   TooltipTrigger
 } from '@/src/components/parts/tooltip';
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator
-} from '@/src/components/parts/breadcrumb';
 import { Sheet, SheetContent, SheetTrigger,SheetHeader, SheetTitle  } from '@/src/components/parts/sheet';
 import { Button } from '@/src/components/parts/button';
 import { User } from './user';
 import { SearchInput } from './search';
+import DashboardBreadcrumb from './DashboardBreadcrumb'
 
 export default function DashboardLayout({
     children
@@ -73,7 +66,7 @@ export default function DashboardLayout({
             <Home className="h-5 w-5" />
           </NavItem>
 
-          <NavItem href="/login" label="Login">
+          <NavItem href="/customer" label="Login">
             <ShoppingCart className="h-5 w-5" />
           </NavItem>
         </nav>
@@ -152,29 +145,5 @@ export default function DashboardLayout({
           
         </SheetContent>
       </Sheet>
-    );
-  }
-
-  function DashboardBreadcrumb() {
-    return (
-      <Breadcrumb className="hidden md:flex">
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link href="#">Dashboard</Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbLink asChild>
-              <Link href="#">Products</Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage>All Products</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
     );
   }
